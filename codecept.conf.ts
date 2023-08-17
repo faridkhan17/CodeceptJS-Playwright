@@ -6,18 +6,46 @@ setHeadlessWhen(process.env.HEADLESS);
 // enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
 setCommonPlugins();
 
+// @ts-ignore
 export const config: CodeceptJS.MainConfig = {
-  tests: './tests/*_test.ts',
+  tests: './scenarios/*_test.ts',
   output: './output',
   helpers: {
     Playwright: {
-      url: 'https://www.saucedemo.com/',
+      url: 'https://www.saucedemo.com',
       show: true,
-      browser: 'chromium'
+      browser: 'chromium',
+      restart: false,
+      timeout: 10000,
+      fullPageScreenshots: true,
+      uniqueScreenshotNames: false,
+      waitForAction: 500,
+      //waitForNavigation: 'networkidle',
+      getPageTimeout: 30000,
+      waitForTimeout: 30000,
+      windowSize: '1920x1080'
     }
   },
   include: {
-    I: './steps_file'
+    I: './steps_file.ts',
+    loginPage: './pages/loginPage.ts',
+    cartPage: './pages/cartPage.ts',
+    checkoutCompletePage: './pages/checkoutCompletePage.ts',
+    checkoutFirstPage: './pages/checkoutFirstPage.ts',
+    checkoutSecondPage: './pages/checkoutSecondPage.ts',
+    inventoryPage: './pages/inventoryPage.ts',
+    productPage: './pages/productPage.ts',
   },
-  name: 'CodeceptJS-Playwright'
+  name: 'tsSaucedemo',
+  bootstrap: null,
+  mocha: {},
+  plugins: {
+    retryFailedStep: {
+      enabled: true
+    },
+    screenshotOnFail: {
+      enabled: true
+    }
+  },
+  require: ['ts-node/register']
 }

@@ -1,21 +1,32 @@
 {
-  "dependencies": {
-    "codeceptjs": "^3.4.1",
-    "playwright": "^1.33.0"
-  },
-  "name": "codeceptjs-playwright",
-  "description": "· TypeScript  · Codecept JS  · Playwright  · Allure Report",
+  "name": "tssaucedemo",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "devDependencies": {
-    "@types/node": "^20.1.4",
-    "mocha": "^10.2.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
-  },
   "scripts": {
-    "test": "mocha"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandershumakov/tsSaucedemo.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandershumakov/tsSaucedemo/issues"
+  },
+  "homepage": "https://github.com/alexandershumakov/tsSaucedemo#readme",
+  "dependencies": {
+    "codeceptjs": "^3.3.5",
+    "faker": "^6.6.6",
+    "playwright": "^1.25.2",
+    "rosie": "^2.1.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "@types/faker": "^6.6.9",
+    "@types/node": "^18.7.16",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  }
 }
